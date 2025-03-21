@@ -1,0 +1,52 @@
+# VMware Host Modules Installer
+
+This project provides an automated Python script to install and configure VMware Host Modules (`vmmon` and `vmnet`) on Linux systems. The script handles cloning the necessary repositories, applying patches, building modules, and loading them using `modprobe`.
+
+## Features
+- Automated installation of required dependencies.
+- Clones the latest compatible version of VMware Host Modules.
+- Applies patches to fix kernel compatibility issues.
+- Builds and installs `vmmon` and `vmnet`.
+- Loads modules using `modprobe`.
+
+## Prerequisites
+- Python 3.x
+- Git
+- Kernel headers and build essentials
+
+## Installation
+1. Clone this repository:
+    ```bash
+    git clone <repository-url>
+    cd <repository-folder>
+    ```
+
+2. Run the installer script:
+    ```bash
+    python3 vmware_installer.py
+    ```
+
+3. Verify if modules are loaded:
+    ```bash
+    lsmod | grep vmmon
+    lsmod | grep vmnet
+    ```
+
+## Troubleshooting
+- Ensure kernel headers are installed using the following command:
+  ```bash
+  sudo apt install linux-headers-$(uname -r)
+  ```
+- If there are errors related to kernel compatibility, ensure you are using a supported version of VMware Workstation and compatible host modules.
+
+## Contributing
+Feel free to open pull requests or issues for improvements and bug fixes.
+
+## License
+This project is licensed under the MIT License.
+
+---
+
+**Author:**  S1L3nTW3aP0n  
+**Contact:** [0Ec8o_X9]https://github.com/007-Z3ro-Echo-X9 
+
